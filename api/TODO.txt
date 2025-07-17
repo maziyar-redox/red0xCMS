@@ -1,0 +1,7 @@
+Add auto generate migration with alembic[ADDED] -> Command sequence -> Revision -> upgrade head
+Add validate and revalidate and invalidate cache
+Add session management
+
+--------------------------
+alembic revision --autogenerate -m "Initial Commit"
+alembic upgrade head

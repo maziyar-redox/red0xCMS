@@ -1,0 +1,11 @@
+sqlmodel
+fastapi[standard]
+dotenv
+passlib
+validate_email
+bcrypt
+alembic
+jwt
+requests
+pyjwt[crypto]
+pytz
