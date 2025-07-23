@@ -1,5 +1,5 @@
 import "@repo/ui/globals.css";
-import { Providers } from "@/components/providers";
+import { ThemeProvider } from "@repo/ui/providers/theme-provider";
 
 export default function RootLayout({
     children,
@@ -8,10 +8,15 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body
-                className={`font-sans antialiased `}
-            >
-                <Providers>{children}</Providers>
+            <body className="font-sans antialiased">
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem
+                    disableTransitionOnChange
+                >
+                    {children}
+                </ThemeProvider>
             </body>
         </html>
     );

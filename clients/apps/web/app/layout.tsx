@@ -1,5 +1,6 @@
 import "@repo/ui/globals.css";
-import { Providers } from "@/components/providers";
+import { ThemeProvider } from "@repo/ui/providers/theme-provider";
+import { Toaster } from "@repo/ui/components/sonner";
 
 export default function RootLayout({
     children,
@@ -8,10 +9,16 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body
-                className={`font-sans antialiased `}
-            >
-                <Providers>{children}</Providers>
+            <body className="font-sans antialiased">
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem
+                    disableTransitionOnChange
+                >
+                    {children}
+                    <Toaster />
+                </ThemeProvider>
             </body>
         </html>
     )
